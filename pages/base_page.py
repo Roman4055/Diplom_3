@@ -1,5 +1,8 @@
-from selenium.webdriver.support.wait import WebDriverWait
+#base_page.py
+from selenium.common.exceptions import ElementClickInterceptedException, TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+
 
 class BasePage:
     def __init__(self, driver, timeout=10):
@@ -11,7 +14,11 @@ class BasePage:
 
     def click_element(self, locator):
         element = self.wait.until(EC.element_to_be_clickable(locator))
-        element.click()
+        try:
+            element.click()
+        except ElementClickInterceptedException:
+            # Оверлей или анимация перекрывают элемент — кликаем через JS
+            self.driver.execute_script("arguments[0].click();", element)
 
     def get_text(self, locator):
         return self.find_element(locator).text

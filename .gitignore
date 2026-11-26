@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Pytest
+.pytest_cache/
+
+# Allure: результаты и отчёты
+allure-results/
+allure-report/
+
+# Секреты: креденшелы тестового аккаунта
+.env
+
+# IDE
+.idea/
+.vscode/
+
+# ОС
+.DS_Store
+Thumbs.db
