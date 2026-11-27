@@ -10,7 +10,6 @@ BASE_URL = "https://stellarburgers.education-services.ru"
 FEED_URL = BASE_URL + "/feed"
 
 # Креденшелы берутся из файла .env в корне проекта.
-# Сам .env в git не попадает (см. .gitignore).
 ENV_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env")
 
 

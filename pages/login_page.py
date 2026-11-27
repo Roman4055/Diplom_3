@@ -7,7 +7,7 @@ from pages.base_page import BasePage
 class LoginPage(BasePage):
     LOGIN_URL = "https://stellarburgers.education-services.ru/login"
 
-    # Email: <input type="text" name="name"> — имя поля "name", это не опечатка стенда
+    # Email: <input type="text" name="name"> — имя поля "name"
     EMAIL_INPUT = (By.XPATH, "//input[@name='name' and @type='text']")
 
     # Пароль: <input type="password" name="Пароль">

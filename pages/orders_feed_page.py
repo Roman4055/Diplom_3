@@ -19,10 +19,6 @@ class OrdersFeedPage(BasePage):
         "/following::p[contains(@class,'text_type_digits-large')][1]")
 
     # --- Номера заказов в блоке статусов.
-    # Реальная разметка: <li class="text text_type_digits-default mb-2">04988</li>
-    # внутри списков «Готовы» и «В работе». Заказы на этом стенде выполняются
-    # мгновенно и могут миновать «В работу», поэтому собираем номера из
-    # всего блока статусов.
     STATUS_NUMBERS = (By.XPATH, "//li[contains(@class,'text_type_digits-default')]")
 
     # --- Заголовок секции «В работе» (это <p>, а не <h2>) ---
